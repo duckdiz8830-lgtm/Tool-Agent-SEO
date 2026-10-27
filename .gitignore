@@ -1,0 +1,57 @@
+# ============================================================
+#  SONEALEO ULTRA — .gitignore
+#  Ver 5.7 — MỞ RỘNG SAU AUDIT 22/08/2026.
+#
+#  Bản trước chỉ chặn cau-hinh.env + *.db. KHÔNG chặn một file .xlsx nào,
+#  trong khi thư mục code chứa:
+#      8MASTER_ENRICHED_Ver8.xlsx        <- có cột "Giá List (VNĐ)"
+#      LOTECH_V3_PROGRESS_TRACKER_VER49.xlsx
+#      du_lieu_goc/*.xlsx  (6 file dữ liệu sản phẩm)
+#      kienthuc/*.json     (dữ liệu catalogue hãng)
+#  `git add .` với bản cũ = đẩy bảng giá nội bộ lên repo công khai.
+#  Đây là lý do file này tồn tại — đừng nới lỏng nó.
+# ============================================================
+
+# ---------- BÍ MẬT / CẤU HÌNH ----------
+cau-hinh.env
+*.env
+!cau-hinh.env.MAU
+
+# ---------- CƠ SỞ DỮ LIỆU ----------
+*.db
+*.db-wal
+*.db-shm
+phase2-du-lieu.db
+
+# ---------- DỮ LIỆU CÔNG TY (GIÁ, SKU, KHÁCH HÀNG) ----------
+# Chặn theo ĐUÔI FILE, không theo tên — tên file đổi liên tục theo Ver.
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+du_lieu_goc/
+kienthuc/
+catalogue/
+*.pdf
+
+# ---------- KẾT QUẢ CHẠY / ẢNH BẰNG CHỨNG ----------
+output/
+anh-bang-chung-ui/
+category-preview-4.0/
+.vision-cache/
+qa/*.json
+
+# ---------- PYTHON ----------
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# ---------- HỆ ĐIỀU HÀNH / IDE ----------
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

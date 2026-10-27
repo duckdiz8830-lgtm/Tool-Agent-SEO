@@ -1,0 +1,7 @@
+requests
+openpyxl
+Pillow
+bleach
+pymupdf
+tksheet
+pillow-heif
